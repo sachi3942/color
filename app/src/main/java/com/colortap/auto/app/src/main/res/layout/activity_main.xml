@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/gradient_bg">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 ColorTap Auto"
+                    android:textSize="28sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Advanced Color Detection System"
+                    android:textSize="14sp"
+                    android:textColor="#E0E0E0"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Status -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Status: "
+                    android:textSize="16sp"
+                    android:textColor="#666"/>
+
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔴 Stopped"
+                    android:textSize="16sp"
+                    android:textColor="#FF0000"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Color Settings -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎨 Color Configuration"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Base Color -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Base Color:"
+                        android:textSize="14sp"
+                        android:textColor="#555"/>
+
+                    <Button
+                        android:id="@+id/baseColorBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Select"
+                        android:backgroundTint="#4CAF50"
+                        android:textColor="#FFFFFF"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"/>
+
+                    <TextView
+                        android:id="@+id/baseColorDisplay"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:background="#FFEB3B"
+                        android:gravity="center"
+                        android:text="Yellow"
+                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Additional Color -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Additional:"
+                        android:textSize="14sp"
+                        android:textColor="#555"/>
+
+                    <Button
+                        android:id="@+id/additionalColorBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Select"
+                        android:backgroundTint="#2196F3"
+                        android:textColor="#FFFFFF"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"/>
+
+                    <TextView
+                        android:id="@+id/additionalColorDisplay"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="Blue"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Reset Color -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Reset Color:"
+                        android:textSize="14sp"
+                        android:textColor="#555"/>
+
+                    <Button
+                        android:id="@+id/resetColorBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Select"
+                        android:backgroundTint="#F44336"
+                        android:textColor="#FFFFFF"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"/>
+
+                    <TextView
+                        android:id="@+id/resetColorDisplay"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center"
+                        android:text="White"
+                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Settings -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚙️ Sequence Settings"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sequence Count:"
+                        android:textSize="14sp"
+                        android:textColor="#555"
+                        android:layout_marginEnd="8dp"/>
+
+                    <EditText
+                        android:id="@+id/targetCountInput"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:inputType="number"
+                        android:text="10"
+                        android:background="@drawable/edittext_bg"
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Tap Count:"
+                        android:textSize="14sp"
+                        android:textColor="#555"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <EditText
+                        android:id="@+id/tapCountInput"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:inputType="number"
+                        android:text="1"
+                        android:background="@drawable/edittext_bg"
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Sequence Logic: Base Color + Additional Color = Count"
+                    android:textSize="12sp"
+                    android:textColor="#888"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/startBtn"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="▶ Start Detection"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/stopBtn"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="⏹ Stop"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Legend -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📖 How it Works"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Base Color + Additional Color = Count together"
+                    android:textSize="13sp"
+                    android:textColor="#555"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Reset Color resets the count to 0"
+                    android:textSize="13sp"
+                    android:textColor="#555"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• When count reaches target, auto-tap executes"
+                    android:textSize="13sp"
+                    android:textColor="#555"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• After tapping, resets and starts fresh"
+                    android:textSize="13sp"
+                    android:textColor="#555"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
